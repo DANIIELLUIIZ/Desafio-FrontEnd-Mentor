@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;700;800&family=Ubuntu&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'inter', sans-serif;
+}
+body {
+  max-width: 68.25rem;
+  height: 100vh;
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+p {
+  line-height: 1.8;
+  color: hsl(236, 13%, 42%);
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 65% 30%;
+  grid-template-areas:
+    'header header  '
+    'section aside '
+    'cards cards ';
+}
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  justify-content: space-between;
+}
+#btn-menu {
+  display: none;
+}
+.header img {
+  width: 50px;
+}
+
+.header > nav ul {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.header > nav ul a {
+  color: hsl(236, 13%, 42%);
+}
+.header > nav ul a:hover {
+  color: hsl(5, 85%, 63%);
+}
+#mobile-menu {
+  display: none;
+}
+.section {
+  grid-area: section;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+}
+.section img {
+  width: 100%;
+}
+.content {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+.title {
+  width: 20rem;
+}
+.title h1 {
+  line-height: 1;
+  font-size: 3.5rem;
+}
+
+.content .article {
+  width: 21rem;
+  padding-left: 0.2rem;
+}
+
+.content .article p {
+  font-size: 15px;
+}
+
+.content .article button {
+  cursor: pointer;
+  padding: 0.8rem 2rem;
+  margin-top: 1.5rem;
+
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  outline: none;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  background-color: hsl(240, 100%, 5%);
+}
+.content .article button:hover {
+  background-color: hsl(5, 85%, 63%);
+}
+
+#aside article:not(:last-child) {
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+  padding-bottom: 1rem;
+}
+
+#aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+
+  background-color: hsl(240, 100%, 5%);
+}
+#aside h2 {
+  font-size: 2.5rem;
+  color: hsl(35, 77%, 62%);
+}
+#aside > article h3 {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  color: hsl(36, 100%, 99%);
+}
+
+#aside h3:hover {
+  color: hsl(35, 77%, 62%);
+}
+#aside p {
+  font-size: 14px;
+  padding-bottom: 0.5rem;
+  color: hsl(0, 1%, 75%);
+}
+
+#cards {
+  grid-area: cards;
+  display: flex;
+  gap: 1.5rem;
+
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  width: 20.6rem;
+  margin: 2rem 0 2rem 0;
+  gap: 1rem;
+}
+.card img {
+  width: 100px;
+}
+.card span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(236, 13%, 42%);
+  opacity: 50%;
+}
+.card h4 {
+  margin: 0.5rem 0;
+}
+.card p {
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: flex;
+    padding: 0 1rem;
+    flex-direction: column;
+  }
+  .section {
+    display: flex;
+    padding: 0 0 1rem 0;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+  }
+  .content {
+    padding: 1rem 0;
+  }
+
+  #cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .card {
+    margin: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    padding-top: 1rem;
+  }
+  .header > nav {
+    display: none;
+  }
+
+  #btn-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  #curtain {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+  }
+  #curtain.curtain-down {
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    background-color: black;
+    opacity: 60%;
+  }
+
+  #mobile-menu {
+    display: block;
+    position: fixed;
+    width: 65%;
+    min-height: 100%;
+    top: 0;
+    right: -65%;
+    background-color: rgb(255, 254, 254);
+
+    z-index: 1001;
+    transition: 0.5s;
+  }
+  #mobile-menu.show-menu {
+    right: 0;
+    transition: 0.5s;
+  }
+  #mobile-menu > header {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+    align-items: center;
+    justify-content: end;
+  }
+  #mobile-menu > header img {
+    cursor: pointer;
+    width: 30px;
+  }
+  #mobile-menu > nav {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 0 1rem;
+  }
+
+  #mobile-menu > nav ul li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid;
+    border-bottom: hsl(233, 8%, 79%) 1px solid;
+  }
+
+  #mobile-menu > nav ul li a {
+    cursor: pointer;
+    padding-right: 100%;
+    font-size: 18px;
+    transition: all 0.5s ease-in-out;
+  }
+  #mobile-menu > nav ul li:hover a {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  #mobile-menu > nav ul li:hover {
+    background-color: hsl(230, 43%, 97%);
+    border: none;
+  }
+  #mobile-menu > nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    left: 25px;
+    margin-top: 9px;
+    background-color: hsl(233, 100%, 12%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  #mobile-menu > nav ul li:hover ::after {
+    width: 8px;
+    height: 8px;
+    left: 20px;
+    border-radius: 100%;
+  }
+  #aside.hide,
+  #cards.hide {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .content .article {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .title h1 {
+    font-size: 2.5rem;
+  }
+
+  #aside h2 {
+    margin-top: 1rem;
+  }
+}
+.attribution {
+  margin: 2rem 0;
+}
