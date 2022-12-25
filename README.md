@@ -4,8 +4,8 @@
 
 ### Design base versão desktop e versão mobile.
 
-<img src="./design/desktop-preview.jpg" width="420px" >
-<img src="./design/mobile-design.jpg" width="61.7px">
+<img src="./design/desktop-preview.jpg" width="400px" >
+<img src="./design/mobile-design.jpg" width="59px">
 
 ## Tecnologias usadas:
 
