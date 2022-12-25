@@ -7,6 +7,11 @@
 <img src="./design/desktop-preview.jpg" width="400px" >
 <img src="./design/mobile-design.jpg" width="59px">
 
+
+## Resultado:
+[Clique aqui 😃](https://daniielluiiz.github.io/Desafio-FrontEnd-Mentor/)
+
+
 ## Tecnologias usadas:
 
 - HTML5
